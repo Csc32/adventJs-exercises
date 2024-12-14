@@ -11,19 +11,21 @@ function createXmasTree(height, ornament) {
   };
   let tree = "";
   let XmasBase = "";
+  XmasBase +=
+    `${base.space}`.repeat(height - 1) +
+    `${base.trunk}`.repeat(1) +
+    `${base.space}`.repeat(height - 1) +
+    "\n";
+  XmasBase +=
+    `${base.space}`.repeat(height - 1) +
+    `${base.trunk}`.repeat(1) +
+    `${base.space}`.repeat(height - 1);
   for (let row = 1; row < height + 1; row++) {
     tree +=
       `${base.space}`.repeat(height - row) +
       `${ornament}`.repeat(2 * row - 1) +
       `${base.space}`.repeat(height - row) +
       "\n";
-  }
-  for (let i = 0; i <= 1; i++) {
-    XmasBase +=
-      `${base.space}`.repeat(height - 1) +
-      `${base.trunk}`.repeat(1) +
-      `${base.space}`.repeat(height - 1) +
-      (i !== 1 ? "\n" : "");
   }
   const XmasTree = tree + XmasBase;
   return XmasTree;
